@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 199 98% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 199 98% 65%;
+    --radius: 0.5rem;
+
+    --primary-gradient-from: 199 98% 65%;
+    --primary-gradient-to: 191 100% 50%;
+    --secondary-gradient-from: 193 95% 68%;
+    --secondary-gradient-via: 195 94% 54%;
+    --secondary-gradient-to: 196 95% 43%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 199 98% 65%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 199 98% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes balanced-neon-blue {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(79, 172, 254, 0.8),
+      0 0 10px rgba(79, 172, 254, 0.6),
+      0 0 15px rgba(79, 172, 254, 0.4),
+      0 0 20px rgba(79, 172, 254, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 2px rgba(79, 172, 254, 0.6),
+      0 0 5px rgba(79, 172, 254, 0.4),
+      0 0 7px rgba(79, 172, 254, 0.2),
+      0 0 10px rgba(79, 172, 254, 0.1);
+  }
+}
+
+@keyframes balanced-neon-cyan {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(97, 218, 251, 0.8),
+      0 0 10px rgba(97, 218, 251, 0.6),
+      0 0 15px rgba(97, 218, 251, 0.4),
+      0 0 20px rgba(97, 218, 251, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 2px rgba(97, 218, 251, 0.6),
+      0 0 5px rgba(97, 218, 251, 0.4),
+      0 0 7px rgba(97, 218, 251, 0.2),
+      0 0 10px rgba(97, 218, 251, 0.1);
+  }
+}
+
+.animate-balanced-neon-blue {
+  animation: balanced-neon-blue 2s ease-in-out infinite alternate;
+}
+
+.animate-balanced-neon-cyan {
+  animation: balanced-neon-cyan 2s ease-in-out infinite alternate;
+}
+
+.fade-mask {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
